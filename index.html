@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake MIUI OS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+  <div class="screen">
+
+    <!-- LOCK SCREEN -->
+    <div class="lockscreen active">
+      <div class="lock-clock" id="lock-time">12:00</div>
+      <div class="lock-date" id="lock-date">Monday, Jan 1</div>
+      <div class="lock-hint">Swipe up to unlock</div>
+    </div>
+
+    <!-- HOME -->
+    <div class="home">
+      <div class="dock">
+
+        <div class="icon" onclick="openApp('dialer')">
+          <img src="icons/dialer.png">
+          <span>Phone</span>
+        </div>
+
+        <div class="icon" onclick="openApp('messages')">
+          <img src="icons/messages.png">
+          <span>Messages</span>
+        </div>
+
+        <div class="icon" onclick="openApp('notes')">
+          <img src="icons/notes.png">
+          <span>Notes</span>
+        </div>
+
+        <div class="icon" onclick="openApp('calendar')">
+          <img src="icons/calendar.png">
+          <span>Calendar</span>
+        </div>
+
+        <div class="icon" onclick="openApp('browser')">
+          <img src="icons/browser.png">
+          <span>Browser</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- APPS -->
+    <div class="app" id="dialer"><h1>Dialer</h1><div class="nav-bar"></div></div>
+    <div class="app" id="messages"><h1>Messages</h1><div class="nav-bar"></div></div>
+    <div class="app" id="notes"><h1>Notes</h1><div class="nav-bar"></div></div>
+    <div class="app" id="calendar"><h1>Calendar</h1><div class="nav-bar"></div></div>
+    <div class="app" id="browser"><h1>Browser</h1><div class="nav-bar"></div></div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
