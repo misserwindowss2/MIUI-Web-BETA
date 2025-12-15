@@ -158,3 +158,11 @@ body {
   border-radius: 4px;
   transform: translateX(-50%);
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;   /* VERY IMPORTANT */
+  overscroll-behavior: none;
+}
