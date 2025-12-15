@@ -166,3 +166,9 @@ html, body {
   overflow: hidden;   /* VERY IMPORTANT */
   overscroll-behavior: none;
 }
+
+.lockscreen {
+  pointer-events: auto;
+  touch-action: none;   /* REQUIRED for Chrome */
+  will-change: transform;
+}
