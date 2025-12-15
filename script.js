@@ -1,3 +1,7 @@
+document.body.addEventListener("touchstart", () => {
+  alert("BODY TOUCH");
+}, { passive: false });
+
 const home = document.querySelector('.home');
 const screen = document.querySelector('.screen');
 const lockscreen = document.querySelector('.lockscreen');
