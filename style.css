@@ -180,3 +180,8 @@ html, body {
   pointer-events: auto;
   touch-action: none;
 }
+
+.home {
+  z-index: 1;
+}
+
