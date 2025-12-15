@@ -101,3 +101,52 @@ screen.addEventListener('touchend', () => {
   }
   dragY = 0;
 });
+
+let startY = 0;
+let currentY = 0;
+let swiping = false;
+
+lockscreen.addEventListener("touchstart", e => {
+  e.preventDefault();           // IMPORTANT
+  startY = e.touches[0].clientY;
+  swiping = true;
+}, { passive: false });
+
+lockscreen.addEventListener("touchmove", e => {
+  if (!swiping) return;
+
+  e.preventDefault();           // IMPORTANT
+  currentY = e.touches[0].clientY;
+  const diff = currentY - startY;
+
+  if (diff < 0) {
+    lockscreen.style.transform = `translateY(${diff}px)`;
+  }
+}, { passive: false });
+
+lockscreen.addEventListener("touchend", e => {
+  e.preventDefault();           // IMPORTANT
+  swiping = false;
+
+  const diff = currentY - startY;
+
+  if (diff < -120) {
+    unlock();
+  } else {
+    lockscreen.style.transform = "translateY(0)";
+  }
+
+  startY = 0;
+  currentY = 0;
+}, { passive: false });
+
+function unlock() {
+  lockscreen.style.transition = "transform 0.35s ease";
+  lockscreen.style.transform = "translateY(-100%)";
+
+  setTimeout(() => {
+    lockscreen.classList.remove("active");
+    lockscreen.style.transition = "";
+    lockscreen.style.transform = "";
+  }, 350);
+}
